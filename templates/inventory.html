@@ -2,7 +2,8 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}">
-
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 </head>
 <body>
@@ -14,10 +15,10 @@
 <p> There are currently no items in the catalog. </p>
 
 {% else %}
-<div class="product">
+<div class="product w3-container">
 	{% for item in items %}
    	<a href={{url_for('product', product_id = item.id)}}>
-      	<p>{{item.name}}</p>
+      	<p class= "w3-large">{{item.name}}</p>
       	<img src={{item.photo}} height="250" >
   	</a>
   	{% endfor %}
@@ -25,6 +26,10 @@
 
 {% endif %}
 {% endblock %}
+
+
+
+
 </body>
 </html>
 
